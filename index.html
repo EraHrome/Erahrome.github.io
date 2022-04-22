@@ -17,16 +17,16 @@
 
   <body style="margin: 0; overflow: hidden;">
     <a-scene
-      vr-mode-ui="enabled: true"
+      vr-mode-ui="enabled: false;"
       embedded
       arjs="sourceType: webcam; debugUIEnabled: true;"
     >
       <a-text
-        value="No markers around"
+        value="Marker"
         look-at="[gps-camera]"
         scale="1 1 1"
       ></a-text>
-      <a-camera gps-camera='gpsMinDistance: 0.01; positionMinAccuracy: 99999999;' rotation-reader> </a-camera>
+      <a-camera gps-camera='gpsMinDistance: 0.1; positionMinAccuracy: 100000;' rotation-reader> </a-camera>
     </a-scene>
   </body>
 </html>
