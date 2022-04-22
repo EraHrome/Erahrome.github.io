@@ -22,11 +22,11 @@
       arjs="sourceType: webcam; debugUIEnabled: true;"
     >
       <a-text
-        value="Marker"
+        value="No markers around"
         look-at="[gps-camera]"
         scale="1 1 1"
       ></a-text>
-      <a-camera gps-camera rotation-reader> </a-camera>
+      <a-camera gps-camera='gpsMinDistance: 0.01; positionMinAccuracy: 99999999;' rotation-reader> </a-camera>
     </a-scene>
   </body>
 </html>
