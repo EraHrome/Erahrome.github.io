@@ -10,21 +10,20 @@
       window.onload = () => {                       
 	  navigator.geolocation.getCurrentPosition((position) => {
         document.querySelector('a-text').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`);
-		const button = document.createElement('button');
-		button.setAttribute('class', 'addMarker');
-		button.setAttribute('type', 'button');
-		document.querySelector('html').appendChild(button);
+		
+		document.querySelector('html').addEventListener('click', (ev)=> {
+		
+			const marker = document.createElement('a-text');
+			marker.setAttribute('value', 'NewMarker');
+			marker.setAttribute('scale', '1 1 1');
+			marker.setAttribute('look-at', '[gps-camera]');
+			marker.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`);
+			document.querySelector('a-scene').appendChild(marker);
+		});
+		
       });
      }
     </script>
-	<style>
-	.addMarker {
-	   position: fixed;
-	   right: 0;
-	   bottom: 0:
-	   z-index: 99999999999999999;
-	}
-	</style>
   </head>
 
   <body style="margin: 0; overflow: hidden;">
