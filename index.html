@@ -37,7 +37,7 @@
         look-at="[gps-camera]"
         scale="1 1 1"
       ></a-text>
-      <a-camera gps-camera='gpsMinDistance: 0.1; positionMinAccuracy: 1;' rotation-reader> </a-camera>
+      <a-camera gps-camera='gpsMinDistance: 0.01; gpsTimeInterval: 1; positionMinAccuracy: 99999;' rotation-reader> </a-camera>
     </a-scene>
 	<button class="addMarker" type="button">Добавить</button>
   </body>
