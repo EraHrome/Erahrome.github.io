@@ -17,7 +17,7 @@
 	  document.querySelector('html').addEventListener('click', (ev)=> {
 			navigator.geolocation.getCurrentPosition((position) => {
 				const marker = document.createElement('a-text');
-				marker.setAttribute('value', 'NewMarker' + '_' + String(markerInt) + '_');
+				marker.setAttribute('value', 'Помидоры' + '_' + String(markerInt));
 				marker.setAttribute('scale', '5 5 5');
 				marker.setAttribute('look-at', '[gps-camera]');
 				marker.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`);
@@ -36,11 +36,11 @@
       arjs="sourceType: webcam; debugUIEnabled: true;"
     >
       <a-text
-        value="Marker"
+        value="Огурцы"
         look-at="[gps-camera]"
         scale="5 5 5"
       ></a-text>
-      <a-camera gps-camera='gpsMinDistance: 0.01; positionMinAccuracy: 99999;' rotation-reader> </a-camera>
+      <a-camera gps-camera='gpsMinDistance: 1;' rotation-reader> </a-camera>
     </a-scene>
 	<button class="addMarker" type="button">Добавить</button>
   </body>
