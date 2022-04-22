@@ -9,7 +9,11 @@
     <script>
       window.onload = () => {                       
 	  navigator.geolocation.getCurrentPosition((position) => {
-        document.querySelector('a-text').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
+        document.querySelector('a-text').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`);
+		const button = document.createElement('button');
+		button.setAttribute('class', 'addMarker');
+		button.setAttribute('type', 'button');
+		document.querySelector('html').appendChild(button);
       });
      }
     </script>
@@ -34,7 +38,7 @@
         look-at="[gps-camera]"
         scale="1 1 1"
       ></a-text>
-      <a-camera gps-camera='gpsMinDistance: 0.1; positionMinAccuracy: 100000;' rotation-reader> </a-camera>
+      <a-camera gps-camera='gpsMinDistance: 0.1; positionMinAccuracy: 1;' rotation-reader> </a-camera>
     </a-scene>
 	<button class="addMarker" type="button">Добавить</button>
   </body>
