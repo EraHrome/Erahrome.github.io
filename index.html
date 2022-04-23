@@ -7,8 +7,8 @@
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script>
-      window.onload = () => {
 	  let markerInt = 1;
+      window.onload = () => {
 	  
 	  navigator.geolocation.getCurrentPosition((position) => {
         document.querySelector('a-text').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`);
@@ -18,6 +18,7 @@
 			navigator.geolocation.getCurrentPosition((position) => {
 				const marker = document.createElement('a-text');
 				marker.setAttribute('value', 'Tomatos' + '_' + String(markerInt));
+				markerInt = markerInt + 1;
 				marker.setAttribute('scale', '3 3 3');
 				marker.setAttribute('look-at', '[gps-camera]');
 				marker.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`);
